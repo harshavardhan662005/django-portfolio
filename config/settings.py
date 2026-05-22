@@ -36,3 +36,4 @@ if os.environ.get('DATABASE_URL'):
 # Static files (Vercel automatically distributes these via its CDN)
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+WSGI_APPLICATION = 'config.wsgi.application'
