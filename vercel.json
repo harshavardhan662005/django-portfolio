@@ -6,11 +6,15 @@
       "src": "config/wsgi.py",
       "use": "@vercel/python",
       "config": { 
-        "maxLambdaSize": "15mb",
-        "installCommand": "pip install -r requirements.txt"
+        "maxLambdaSize": "15mb"
       }
     }
   ],
+  "build": {
+    "env": {
+      "ENABLE_UV": "0"
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
