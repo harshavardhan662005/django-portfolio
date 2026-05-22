@@ -34,6 +34,13 @@ if os.environ.get('DATABASE_URL'):
     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Static files (Vercel automatically distributes these via its CDN)
-STATIC_URL = '/static/'
+# Absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-WSGI_APPLICATION = 'config.wsgi.application'
+
+# URL to use when referring to static files located in STATIC_ROOT.
+STATIC_URL = '/static/'
+
+# Additional locations the staticfiles app will look for static files.
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
