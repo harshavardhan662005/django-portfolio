@@ -1,20 +1,11 @@
 {
   "version": 2,
-  "framework": "django",
   "builds": [
     {
       "src": "config/wsgi.py",
-      "use": "@vercel/python",
-      "config": { 
-        "maxLambdaSize": "15mb"
-      }
+      "use": "@vercel/python"
     }
   ],
-  "build": {
-    "env": {
-      "ENABLE_UV": "0"
-    }
-  },
   "routes": [
     {
       "src": "/(.*)",
