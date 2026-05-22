@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-local-development-fallbac
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
 
 # Allow local hosting and your future Vercel domain name
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
 
 # Database Routing
 DATABASES = {
