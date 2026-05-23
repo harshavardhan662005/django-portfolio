@@ -43,7 +43,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # URL to use when referring to static files located in STATIC_ROOT.
 STATIC_URL = '/static/'
 
-# Additional locations the staticfiles app will look for static files.
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+import os
+
+# 1. Standard URL layout
+STATIC_URL = '/static/'
+
+# 2. Point to a simple local directory
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# 3. Tell Django to use a dummy, memory-only storage system for collecting files
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.InMemoryStorage",
+    },
+}
+
+# 4. Make sure this list is completely empty
+STATICFILES_DIRS = []
