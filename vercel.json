@@ -1,4 +1,7 @@
 {
   "version": 2,
-  "framework": "django"
+  "framework": "django",
+  "env": {
+    "DISABLE_COLLECTSTATIC": "1"
+  }
 }
