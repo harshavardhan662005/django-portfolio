@@ -1,15 +1,18 @@
 import os
-import dj_database_url
 from pathlib import Path
+import dj_database_url
 
-# 1. Define BASE_DIR at the top of the file before using it!
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ... (rest of your settings like SECRET_KEY, DEBUG, ALLOWED_HOSTS)
-
-# 2. Now this will work perfectly without errors:
+# 1. URL to use when referring to static files
 STATIC_URL = '/static/'
+
+# 2. This is where production static files will be collected (Crucial for Vercel)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# 3. Strip out STATICFILES_DIRS completely for now to see if it fixes the build
+STATICFILES_DIRS = []
 # Security settings
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'your-local-development-fallback-key')
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True') == 'True'
