@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'vercel-build-placeholder-secret-key')
 # Security - Keep true for debugging until it successfully loads
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
 
 # --- DATABASE SETTINGS ---
 # Fallback to an in-memory SQLite database if dj_database_url can't find a live database string during build
