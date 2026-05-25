@@ -9,7 +9,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'vercel-build-placeholder-secret-key')
 
 # Security - Keep true for debugging until it successfully loads
 DEBUG = True
-
+ROOT_URLCONF = 'config.urls'
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
 
 # --- DATABASE SETTINGS ---
