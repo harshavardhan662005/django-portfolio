@@ -11,7 +11,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'vercel-build-placeholder-secret-key')
 DEBUG = True
 ROOT_URLCONF = 'config.urls'
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
-
+ROOT_URLCONF = 'config.urls'
+WSGI_APPLICATION = 'config.wsgi.application'
 # --- DATABASE SETTINGS ---
 # Fallback to an in-memory SQLite database if dj_database_url can't find a live database string during build
 DATABASES = {
